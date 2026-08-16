@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+
+# Dataset / video
+datasets/
+data/
+*.mp4
+*.avi
+*.mov
+
+# Output
+output/
+runs/
+
+tracking_data.csv
+tracking_data.json
+tracking_debug.csv

@@ -1,0 +1,8 @@
+ultralytics
+opencv-python
+numpy
+pandas
+torch
+torchvision
+yt-dlp
+huggingface-hub
