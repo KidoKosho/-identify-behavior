@@ -1,23 +1,64 @@
 # Virtual environment
 venv/
 .venv/
+env/
 
-# Python
+# Python cache
 __pycache__/
 *.py[cod]
+*$py.class
+*.pyc
 
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Agent & workspace metadata
+.agent/
+.agents/
+skills-lock.json
 
 # Dataset / video
 datasets/
 data/
+video/
+videos/
 *.mp4
 *.avi
 *.mov
+*.mkv
 
-# Output
+# Large weights & Model files
+*.h5
+*.keras
+*.tflite
+*.onnx
+*.engine
+models/fire_smoke/
+fire_smoke_detector_tf/
+saved_model_dir/
+
+# Output & logs
 output/
+outputs/
 runs/
-
+snapshots/
+*.log
+*.csv
+*.jsonl
 tracking_data.csv
 tracking_data.json
 tracking_debug.csv
+
+# Test & coverage artifacts
+.pytest_cache/
+test-results/
+images/failures/
+images/passed/
+images/debug/
+
+# Env & scratch files
+.env
+test.py

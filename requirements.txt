@@ -1,8 +1,7 @@
-ultralytics
-opencv-python
-numpy
-pandas
-torch
+torch 
 torchvision
-yt-dlp
-huggingface-hub
+matplotlib
+seaborn
+scikit-learn
+tqdm
+opencv
