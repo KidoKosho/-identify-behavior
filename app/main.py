@@ -48,7 +48,8 @@ def main():
     # Để tránh download trong lúc demo, ta gọi load_yolo (nếu file tồn tại)
     models.load_yolo("models/yolov8s.pt")
     models.load_violence("models/best_violence_model.pth")
-    models.load_fire_smoke("model.tflite")
+    models.load_fire_smoke("models/fire_smoke/model.tflite")
+
 
     
     # Khởi tạo Camera (chạy thread riêng)

@@ -48,15 +48,21 @@ class ModelLoader:
                 print(f"Warning: Violence weight not found at {weight_path}")
         return self.violence
         
-    def load_fire_smoke(self, weight_path: str = "model.tflite"):
+    def load_fire_smoke(self, weight_path: str = "models/fire_smoke/model.tflite"):
         from app.models.fire_smoke_detector import FireSmokeDetector
         if not hasattr(self, 'fire_smoke') or self.fire_smoke is None:
+            if not os.path.exists(weight_path):
+                for fb in ["models/fire_smoke/model.tflite", "models/fire_smoke/model.h5", "models/fire_smoke/fire_smoke_detector.keras"]:
+                    if os.path.exists(fb):
+                        weight_path = fb
+                        break
             if os.path.exists(weight_path):
                 self.fire_smoke = FireSmokeDetector(model_path=weight_path)
             else:
                 print(f"Warning: Fire/Smoke weight not found at {weight_path}")
                 self.fire_smoke = None
         return getattr(self, 'fire_smoke', None)
+
         
     def get_yolo(self):
         if self.yolo is None:

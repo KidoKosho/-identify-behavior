@@ -3,11 +3,14 @@ venv/
 .venv/
 env/
 
-# Python cache
+# Python cache & build
 __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
+build/
+dist/
+*.egg-info/
 
 # IDE & Editor files
 .vscode/
@@ -20,7 +23,7 @@ __pycache__/
 .agents/
 skills-lock.json
 
-# Dataset / video
+# Datasets & Data
 datasets/
 data/
 video/
@@ -30,7 +33,8 @@ videos/
 *.mov
 *.mkv
 
-# Large weights & Model files
+# Model Checkpoints & Large weights
+checkpoints/
 *.h5
 *.keras
 *.tflite
@@ -40,11 +44,14 @@ models/fire_smoke/
 fire_smoke_detector_tf/
 saved_model_dir/
 
-# Output & logs
+# Output, Cache & Logs
 output/
 outputs/
 runs/
 snapshots/
+logs/
+cache/
+.cache/
 *.log
 *.csv
 *.jsonl
@@ -59,6 +66,6 @@ images/failures/
 images/passed/
 images/debug/
 
-# Env & scratch files
+# Env & local configs
 .env
-test.py
+

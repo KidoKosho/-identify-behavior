@@ -1,12 +1,17 @@
-# config/model_config.py
+# app/config/model_config.py
 import os
-from config.performance_config import PerformanceConfig as PConf
+from app.config.performance_config import PerformanceConfig as PConf
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 class ModelConfig:
     # Model paths
-    COCO_MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'yolov8n.pt')
-    FIRE_MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'models', 'fire.pt')
-    ACCIDENT_MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'models', 'accident.pt')
+    COCO_MODEL_PATH = os.path.join(BASE_DIR, 'models', 'yolov8n.pt')
+    YOLO_S_PATH = os.path.join(BASE_DIR, 'models', 'yolov8s.pt')
+    VIOLENCE_MODEL_PATH = os.path.join(BASE_DIR, 'models', 'best_violence_model.pth')
+    FIRE_MODEL_PATH = os.path.join(BASE_DIR, 'models', 'fire_smoke', 'model.h5')
+    FIRE_TFLITE_PATH = os.path.join(BASE_DIR, 'models', 'fire_smoke', 'model.tflite')
+    FIRE_KERAS_PATH = os.path.join(BASE_DIR, 'models', 'fire_smoke', 'fire_smoke_detector.keras')
     
     # Thresholds
     CONF_THRESHOLD = 0.25

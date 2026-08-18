@@ -13,6 +13,9 @@ import argparse
 import sys
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 def upload_models(repo_id: str, token: str = None, private: bool = False):
     try:
         from huggingface_hub import HfApi, create_repo
@@ -34,13 +37,9 @@ def upload_models(repo_id: str, token: str = None, private: bool = False):
     # 2. Danh sách file/folder cần upload
     root_dir = Path(__file__).resolve().parent.parent
     files_to_upload = [
-        # Thư mục models
         ("models", "models"),
-        # Các file model trọng số lớn ở root (nếu có)
-        ("InceptionResNetV2_4class_fire_smoke_no_fire_balanced.h5", "InceptionResNetV2_4class_fire_smoke_no_fire_balanced.h5"),
-        ("fire_smoke_detector.keras", "fire_smoke_detector.keras"),
-        ("model.tflite", "model.tflite"),
     ]
+
 
     for local_path, repo_path in files_to_upload:
         full_local_path = root_dir / local_path
